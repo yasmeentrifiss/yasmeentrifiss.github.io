@@ -49,7 +49,7 @@
         $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "data/questions.csv",
+        url: "data/answers.csv",
         dataType: "text",
         success: function(data) {processData(data);}
      });
@@ -76,11 +76,11 @@ function processData(allText) {
     }
      //document.getElementById("tableau").innerHTML="tammmere";
 
-     var html = "<table id='tableau' style='width:100%''>";
+     var html = "<table id='tableau' class='stripped' style='width:100%''>";
      html+="<thead><tr>";
      for (var i = 0; i < headers.length; i++) {
         
-        html+="<th>"+headers[i]+"</th>";
+        html+="<th class='rotate'><span><div>"+headers[i]+"</span></div></th>";
         
 
     }
@@ -89,7 +89,7 @@ function processData(allText) {
     for (var i = 0; i < ta.length; i++) {
         html+="<tr>";
         for (var j = 0; j < ta[0].length; j++) {
-        html+="<td>"+ta[i][j]+"</td>";
+        html+="<td><input type='text' value="+ta[i][j]+"></td>";
       }
         html+="</tr>";
 
