@@ -1,18 +1,19 @@
+ <!DOCTYPE HTML>
+
  <html>
+
     <head>
-      <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-      <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-
-    <body>
-      <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="http://d3js.org/d3.v3.min.js"></script> 
+      <script src="d3.min.js?v=3.2.8"></script>
+    </head>
+
+
+    <body>      
 
       <nav class="nav-extended">
     <div class="nav-wrapper">
@@ -31,8 +32,8 @@
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="#tab1">1</a></li>
-        <li class="tab"><a class="active" href="#tab2">2</a></li>
+        <li class="tab"><a class="active" href="#tab1">1</a></li>
+        <li class="tab"><a href="#tab2">2</a></li>
         <li class="tab disabled"><a href="#tab3">Disabled Tab</a></li>
         <li class="tab disabled"><a href="#tab4">Disabled Tab </a></li>
       </ul>
@@ -41,7 +42,76 @@
 
   <!--  **************  TAB 1  *****************  -->
 
-  <div id="tab1" class="col s12">Test1</div>
+  <div id="tab1" class="col s12">
+
+
+        <script src="http://code.jquery.com/jquery-2.2.1.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+        $(document).ready(function() {
+    $.ajax({
+        type: "GET",
+        url: "data/questions.csv",
+        dataType: "text",
+        success: function(data) {processData(data);}
+     });
+
+});
+
+function processData(allText) {
+    
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(';');
+    var lines = [];
+    var ta = new Array();
+
+
+    for (var i=1; i<allTextLines.length-1; i++) {
+        ta[i-1]=new Array();
+        var data = allTextLines[i].split(';');
+        if (data.length == headers.length) {
+
+            for (var j=0; j<headers.length; j++) {
+                ta[i-1][j]=data[j];
+            }
+        }
+    }
+     //document.getElementById("tableau").innerHTML="tammmere";
+
+     var html = "<table style='width:100%''>";
+     html+="<thead><tr>";
+     for (var i = 0; i < headers.length; i++) {
+        
+        html+="<th>"+headers[i]+"</th>";
+        
+
+    }
+    html+="</tr></thead>";
+
+    for (var i = 0; i < ta.length; i++) {
+        html+="<tr>";
+        for (var j = 0; j < ta[0].length; j++) {
+        html+="<td>"+ta[i][j]+"</td>";
+      }
+        html+="</tr>";
+
+    }
+    html+="</table>";
+    document.getElementById("box").innerHTML = html;
+
+    
+     
+}
+        
+      
+
+        </script>
+<div id="box">tamer</div>
+         <table style="width:100%" id="tableau">
+    
+          </table>
+
+  </div>
 
   <!--  **************  TAB 2  *****************  -->
   <div id="tab2" class="col s12">Test 2</div>
