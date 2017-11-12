@@ -8,8 +8,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script src="http://d3js.org/d3.v3.min.js"></script> 
-      <script src="d3.min.js?v=3.2.8"></script>
     </head>
 
 
@@ -32,10 +30,10 @@
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="#tab1">1</a></li>
-        <li class="tab"><a href="#tab2">2</a></li>
-        <li class="tab disabled"><a href="#tab3">Disabled Tab</a></li>
-        <li class="tab disabled"><a href="#tab4">Disabled Tab </a></li>
+        <li class="tab"><a class="active" href="#tab1">questions</a></li>
+        <li class="tab"><a href="#tab2">reponses</a></li>
+        <li class="tab"><a href="#tab3">Recherche</a></li>
+        <li class="tab"><a href="#tab4">contact</a></li>
       </ul>
     </div>
   </nav>
@@ -78,7 +76,7 @@ function processData(allText) {
     }
      //document.getElementById("tableau").innerHTML="tammmere";
 
-     var html = "<table style='width:100%''>";
+     var html = "<table id='tableau' style='width:100%''>";
      html+="<thead><tr>";
      for (var i = 0; i < headers.length; i++) {
         
@@ -106,7 +104,7 @@ function processData(allText) {
       
 
         </script>
-<div id="box">tamer</div>
+<div id="box"></div>
          <table style="width:100%" id="tableau">
     
           </table>
@@ -114,12 +112,23 @@ function processData(allText) {
   </div>
 
   <!--  **************  TAB 2  *****************  -->
-  <div id="tab2" class="col s12">Test 2</div>
+  <div id="tab2" class="col s12">En construction
+
+<script>
+var t =document.getElementById("tableau");
+document.write("test");
+document.write(t);
+document.getElementById("b").innerHTML = t;
+
+</script>
+<div id="b"></div>
+
+  </div>
 
   <!--  **************  TAB 3  *****************  -->
-  <div id="tab3" class="col s12">Test 3</div>
+  <div id="tab3" class="col s12">En construction</div>
 
   <!--  **************  TAB 4  *****************  -->
-  <div id="tab4" class="col s12">Test 4</div>
+  <div id="tab4" class="col s12">En construction</div>
     </body>
   </html>
