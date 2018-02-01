@@ -12,123 +12,15 @@
 
 
     <body>      
-
-      <nav class="nav-extended">
+     <nav class="nav-extended">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Bienvenue</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-   <!--   <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul> -->
-    </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="#tab1">questions</a></li>
-        <li class="tab"><a href="#tab2">reponses</a></li>
-        <li class="tab"><a href="#tab3">Recherche</a></li>
-        <li class="tab"><a href="#tab4">contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!--  **************  TAB 1  *****************  -->
-
-  <div id="tab1" class="col s12">
-
-
-        <script src="http://code.jquery.com/jquery-2.2.1.js"></script>
-        <script type="text/javascript" charset="utf-8">
-
-        $(document).ready(function() {
-    $.ajax({
-        type: "GET",
-        url: "data/answers.csv",
-        dataType: "text",
-        success: function(data) {processData(data);}
-     });
-
-});
-
-function processData(allText) {
-    
-    var allTextLines = allText.split(/\r\n|\n/);
-    var headers = allTextLines[0].split(';');
-    var lines = [];
-    var ta = new Array();
-
-
-    for (var i=1; i<allTextLines.length-1; i++) {
-        ta[i-1]=new Array();
-        var data = allTextLines[i].split(';');
-        if (data.length == headers.length) {
-
-            for (var j=0; j<headers.length; j++) {
-                ta[i-1][j]=data[j];
-            }
-        }
-    }
-     //document.getElementById("tableau").innerHTML="tammmere";
-
-     var html = "<table id='tableau' class='stripped' style='width:100%''>";
-     html+="<thead><tr>";
-     for (var i = 0; i < headers.length; i++) {
-        
-        html+="<th class='rotate'><span><div>"+headers[i]+"</span></div></th>";
-        
-
-    }
-    html+="</tr></thead>";
-
-    for (var i = 0; i < ta.length; i++) {
-        html+="<tr>";
-        for (var j = 0; j < ta[0].length; j++) {
-        html+="<td><input type='text' value="+ta[i][j]+"></td>";
-      }
-        html+="</tr>";
-
-    }
-    html+="</table>";
-    document.getElementById("box").innerHTML = html;
-
-    
+   
      
-}
-        
       
-
-        </script>
-<div id="box"></div>
-         <table style="width:100%" id="tableau">
-    
-          </table>
-
-  </div>
-
-  <!--  **************  TAB 2  *****************  -->
-  <div id="tab2" class="col s12">En construction
-
-<script>
-var t =document.getElementById("tableau");
-document.write("test");
-document.write(t);
-document.getElementById("b").innerHTML = t;
-
-</script>
-<div id="b"></div>
-
-  </div>
-
-  <!--  **************  TAB 3  *****************  -->
-  <div id="tab3" class="col s12">En construction</div>
-
-  <!--  **************  TAB 4  *****************  -->
-  <div id="tab4" class="col s12">En construction</div>
+      <a href="#" class="brand-logo">Bienvenue</a>
+     <img src="/data/flyer1-1.png"/>
+     <img src="/data/flyer1-2.png"/>
+      </div>
+     </nav>
     </body>
   </html>
